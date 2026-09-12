@@ -1,5 +1,5 @@
 ---
-title: "Dr. Guang Yin 尹光"
+title: "Dr. Guang Yin"
 permalink: /
 author_profile: true
 ---
