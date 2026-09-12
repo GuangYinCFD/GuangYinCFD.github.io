@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title: "Guang Yin 尹光"
+title: "Guang Yin"
 title_separator          : "-"
 name: "Guang Yin"
 description: "Guang Yin — Associate Professor in Offshore Technology, University of Stavanger. Fluid mechanics, fluid–structure interaction and reduced-order modeling."
@@ -24,7 +24,7 @@ repository: "GuangYinCFD/GuangYinCFD.github.io"
 author:
   # Biographic information
   avatar: "migrated/0a8473_e94b9f991a2945eaa8b66fbceec2eb33~mv2.jpg"
-  name: "Guang Yin 尹光"
+  name: "Guang Yin"
   pronouns         : # example: "she/her"  
   bio: "Associate Professor in Offshore Technology"
   location: "Stavanger, Norway"
@@ -149,7 +149,7 @@ og_description           :  # Social media default site image description
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
   type                   : # Person or Organization (defaults to Person)
-  name: "Guang Yin 尹光"
+  name: "Guang Yin"
   links: # An array of links to social media profiles
 
 

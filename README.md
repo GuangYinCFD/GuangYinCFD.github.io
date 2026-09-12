@@ -1,4 +1,4 @@
-# Guang Yin 尹光
+# Guang Yin
 
 Academic homepage of Dr. Guang Yin, University of Stavanger.
 
