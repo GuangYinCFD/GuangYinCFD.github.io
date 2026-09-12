@@ -15,14 +15,14 @@ jobs:
       - uses: actions/checkout@v6
         with:
           persist-credentials: false
-      - name: Unpack prepared Academic Pages source for build
+      - name: Unpack Academic Pages theme and assets
         shell: bash
         run: |
-          if [ -f academic-site.zip.001 ]; then
-            python3 - <<'PY'
+          python3 - <<'PY'
           from pathlib import Path
           import hashlib, io, zipfile
           parts = sorted(Path('.').glob('academic-site.zip.[0-9][0-9][0-9]'))
+          assert len(parts) == 12, 'Missing website source bundle'
           data = b''.join(p.read_bytes() for p in parts)
           assert hashlib.sha256(data).hexdigest() == 'd5563a21e7466141d693397ab55b8c5ed5cf6e6a28e6ed3703de8a77df5c2030', 'Archive checksum mismatch'
           root = Path.cwd().resolve()
@@ -32,11 +32,11 @@ jobs:
                   assert target.is_relative_to(root), 'Unsafe archive path'
                   if member.filename.startswith(('.github/', '.git/', '.bundle/')):
                       continue
-                  archive.extract(member, root)
+                  if not target.exists():
+                      archive.extract(member, root)
           for p in parts:
               p.unlink()
           PY
-          fi
       - uses: actions/configure-pages@v5
       - uses: actions/jekyll-build-pages@v1
         with:
