@@ -1,0 +1,58 @@
+name: Build and deploy academic website
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Unpack prepared Academic Pages source for build
+        shell: bash
+        run: |
+          if [ -f academic-site.zip.001 ]; then
+            python3 - <<'PY'
+          from pathlib import Path
+          import hashlib, io, zipfile
+          parts = sorted(Path('.').glob('academic-site.zip.[0-9][0-9][0-9]'))
+          data = b''.join(p.read_bytes() for p in parts)
+          assert hashlib.sha256(data).hexdigest() == 'd5563a21e7466141d693397ab55b8c5ed5cf6e6a28e6ed3703de8a77df5c2030', 'Archive checksum mismatch'
+          root = Path.cwd().resolve()
+          with zipfile.ZipFile(io.BytesIO(data)) as archive:
+              for member in archive.infolist():
+                  target = (root / member.filename).resolve()
+                  assert target.is_relative_to(root), 'Unsafe archive path'
+                  if member.filename.startswith(('.github/', '.git/', '.bundle/')):
+                      continue
+                  archive.extract(member, root)
+          for p in parts:
+              p.unlink()
+          PY
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - uses: actions/upload-pages-artifact@v4
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
