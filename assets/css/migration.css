@@ -1,0 +1,6 @@
+
+.migrated-figure { margin: 1.5em 0; }
+.migrated-figure img { display: block; max-width: 100%; max-height: 560px; width: auto; height: auto; border-radius: 4px; }
+.page__content p, .page__content li { overflow-wrap: anywhere; }
+.page__content h2 { margin-top: 1.8em; }
+.page__footer { position: relative; bottom: auto; }
