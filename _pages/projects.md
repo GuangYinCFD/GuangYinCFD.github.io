@@ -22,6 +22,12 @@ A low-dimensional subspace of the FSI will be extracted using modal analysis thr
 
 <h2>Concept</h2>
 
+<p>
+  <a href="https://cordis.europa.eu/project/id/101165107" target="_blank" rel="noopener">
+    Project website
+  </a>
+</p>
+
 <figure class="migrated-figure"><img loading="lazy" src="/images/migrated/0a8473_a65926eda4ac4a8a911a688d907a7ff5~mv2.png" alt="Projects illustration"></figure>
 
 <h2>Funder</h2>
