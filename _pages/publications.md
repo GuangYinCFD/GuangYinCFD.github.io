@@ -63,6 +63,7 @@ redirect_from:
 <ol>
   <li>Yin, G., Gorikhin, A., Olsen, C.L., Liu, S. and Ong, M.C., 2024. Numerical simulations of wave-soil-structure interactions for a subsea cover. Coastal Engineering, 189, p.104475</li>
   <li>Yin, G., Ong, M.C., Sævik, S., Gjøsteen, J.K.Ø., Giertsen, E. and Ye, N., 2026. A data-driven model for combined current-wave induced boundary layers. Applied Ocean Research, 166, p.104877.</li>
+  <li>Yin, G. and Ong, M.C., 2026. Deep operator network prediction of velocity profiles in combined wave-current bottom boundary layers. Applied Ocean Research, 176, p.105315.</li>
 </ol>
 {% endcapture %}
 {% assign count_3 = publications_3 | split: '<li>' | size | minus: 1 %}
