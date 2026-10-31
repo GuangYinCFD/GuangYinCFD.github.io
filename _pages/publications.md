@@ -91,6 +91,7 @@ redirect_from:
   <li>Gu, Y., Yin, G.*, Janocha, M.J. and Ong, M.C., 2024. Icing Models and Mitigation Methods for Offshore Wind in Cold Climate Regions: A Review. Marine Energy Research, 1(1), p.10002.</li>
   <li>Wen, X., Yin, G., Liu, T., Ong, M.C., Wang, C. and Wang, K., 2025. An optimization framework for mooring design of floating offshore wind turbines using a genetic algorithm based on a surrogate model. Renewable Energy, 245, p.122807.</li>
   <li>Gu, Y., Janocha, M.J., Yin, G. and Ong, M.C., 2025. Feasibility study on spar-type floating offshore wind turbine in ice-covered seas. Results in Engineering, p.108050.</li>
+  <li>Gu, Y., Yin, G. and Ong, M.C., 2026. Prediction of the dynamic response of a 20 MW spar-type offshore wind turbine under level ice loads using LSTM networks. Results in Engineering, p.113769.</li>
 </ol>
 {% endcapture %}
 {% assign count_5 = publications_5 | split: '<li>' | size | minus: 1 %}
